@@ -1,0 +1,62 @@
+:root {
+    --color-ajuntament: #339933;
+}
+
+body.page-node-5505 .portales7-fc-llistat_telefonic .portales7_fc_name, body.page-node-5463 .portales7-fc-llistat_telefonic .portales7_fc_name {
+    border-bottom: 2px solid #000;
+    padding-bottom: 7px;
+}
+
+.portales7-fc-llistat_telefonic .portales7_fc_name {
+    border-bottom: 1px solid #000;
+    width: 100%;
+    display: block;
+    padding-bottom: 16px;
+    font-size: 27px;
+    color: #000;
+    font-family: RoboBold;
+}
+
+.page-node .pane-page-content .panels-flexible-region-inside .pane-entity-field .field-type-field-collection .portales7_fc_content {
+    margin: 0;
+}
+
+body.page-node-5505 .portales7-fc-llistat_telefonic.pm-active .portales7_fc_content, body.page-node-5463 .portales7-fc-llistat_telefonic.pm-active .portales7_fc_content, body.page-node-5505 .portales7-fc-llistat_telefonic.pm-active .portales7_fc_description, body.page-node-5463 .portales7-fc-llistat_telefonic.pm-active .portales7_fc_description {
+    display: block;
+}
+
+.grupo-nodo-entidades .foto-izquierda .portales7-fc-llistat_telefonic .portales7_fc_content ul, .page-node-5505 .grupo-nodo-entidades .foto-izquierda .portales7-fc-llistat_telefonic .portales7_fc_content ul > li, .page-node-5463 .grupo-nodo-entidades .foto-izquierda .portales7-fc-llistat_telefonic .portales7_fc_content ul, .page-node-5463 .grupo-nodo-entidades .foto-izquierda .portales7-fc-llistat_telefonic .portales7_fc_content ul > li {
+    padding: 0;
+}
+
+.item-list ul {
+    margin: 0 0 0.75em 0;
+    padding: 0;
+}
+
+ul > li {
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--color-ajuntament);
+}
+
+.field-type-field-collection h2 {
+    font-family: RoboRegular;
+    font-size: 1em;
+    margin: 0;
+}
+
+body.page-node-5505 .group-llistat-telefonic {
+    position: relative;
+}
+
+.group-senyes.field-group-div {
+    display: grid;
+    /* grid-template-columns: auto auto; */
+    column-gap: 20px;
+}
+
+.group-senyes {
+    display: grid;
+    align-items: center;
+}
