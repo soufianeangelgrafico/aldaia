@@ -1,0 +1,44 @@
+ul.children li {
+    background-color: #e8e9e9;
+    /*color: #FFF;*/
+    border: 1px solid #c9c9c9 !important;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+
+    padding: 0 0 9px 35px;
+    /*background-color: white;
+    line-height: 1;*/
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul li a {
+    width: 300px;
+    text-decoration: none;
+    line-height: inherit;
+    background: #e8e9e9;
+    color: #353535;
+}
+
+ul li a {
+    line-height: inherit;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 14px;
+    text-decoration: none;
+    color: #5b5c5c;
+    line-height: 20px;
+    -webkit-transition: color .2s ease;
+    -o-transition: color .2s ease;
+    transition: color .2s ease;
+}
+
+.grop {
+    width: 20rem;
+    height: auto;
+}

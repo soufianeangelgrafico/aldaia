@@ -20,7 +20,7 @@
                 padding: 50px;
                 background: #fff;
             }
-            .wrapper {
+            .wrapper, .field-items {
                 width: 70%;
             }
             @media (max-width: 992px) {
@@ -43,7 +43,7 @@
                 word-spacing: 3px;
                 text-decoration: none;
             }
-            .panel-heading a:before {
+            .panel-heading a::before {
                 font-family: "Font Awesome 6 Free";
                 content: "\f106";
                 float: right;
@@ -74,10 +74,78 @@
                 font-size: 12px;
             }
 
-            p.map:before {
-                font-family: "Font Awesome 6 Free";
+            .map::before {
+                font-family: FontAwesome;
                 content: "\f3c5";
                 float: left;
+                color: #339933;
+                margin-right: 10px;
+            }
+
+            a.telephon::before {
+                font-family: FontAwesome;
+                content: "\f095";
+                color: #339933;
+                margin-right: 10px;
+            }
+
+            a.mail::before {
+                font-family: FontAwesome;
+                content: "\f0e0";
+                color: #339933;
+                margin-right: 10px;
+            }
+
+            .map::before {
+                font-family: FontAwesome;
+                content: "\f3c5";
+                float: left;
+                margin-right: 10px;
+            }
+
+            .link::before {
+                font-family: FontAwesome;
+                content: "\f0c1";
+                color: #339933;
+                margin-right: 10px;
+            }
+
+            .grop a {
+                font-size: 15px;
+                text-align: end;
+            }
+
+            .grop {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                border-bottom: 1px solid #339933;
+            }
+
+            .grop h3 {
+                grid-column: 1 / 3;
+            }
+
+            p.nota {
+                grid-row: 3;
+            }
+
+            .grop a {
+                grid-column: 2/3;
+                display: inline;
+            }
+
+            .field-item.even, .field-item.odd{
+                border: 1px solid;
+                margin: 10px;
+            }
+
+            .field-item.even a, .field-item.odd a{
+                color: #000;
+            }
+
+            h4.panel-title {
+                font-weight: bold;
+                font-size: 27px;
             }
         </style>
         <div class="wrapper center-block">
@@ -115,26 +183,26 @@
                         <div class="panel-body">
                             <div class="grop">
                                 <h3>Alcaldia</h3>
-                                <p>
+                                <p class="map">
                                     L'alcaldia atén la ciutadania, cal consultar
                                     dies, horari i lloc.
                                 </p>
-                                <a href="mailto:alcaldia@ajuntamentaldaia.org"
+                                <a class="mail" href="mailto:alcaldia@ajuntamentaldaia.org"
                                     >alcaldia@ajuntamentaldaia.org</a
                                 >
                             </div>
                             <div class="grop">
                                 <h3>Casa Consistorial</h3>
-                                <p>
+                                <p class="map">
                                     Plaza de la Constitución, 10 46960 Aldaia
                                     Valencia
                                 </p>
-                                <a href="tel:+3496 150 15 00">96 150 15 00</a>
-                                <a href="tel:+3496 151 06 93">96 151 06 93</a>
-                                <a href="mailto:ajuntament@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+3496 150 15 00">96 150 15 00</a>
+                                <a class="telephon" href="tel:+3496 151 06 93">96 151 06 93</a>
+                                <a class="mail" href="mailto:ajuntament@ajuntamentaldaia.org"
                                     >ajuntament@ajuntamentaldaia.org</a
                                 >
-                                <a href="http://www.aldaia.eu/"
+                                <a class="link" href="http://www.aldaia.eu/"
                                     >www.aldaia.eu</a
                                 >
                             </div>
@@ -143,25 +211,25 @@
                                     OIA- Oficina d'informació administrativa i
                                     Atenció a la Ciutadania
                                 </h3>
-                                <p>
+                                <p class="map">
                                     Plaza Constitución 10 46960 Aldaia Valencia
                                 </p>
-                                <p>
+                                <p class="nota">
                                     Serveis: Registre d'entrada, Tauler
                                     d'edictes, Empadronament, Sala de plens.
                                 </p>
-                                <a href="tel:+3496 150 15 00">96 150 15 00</a>
-                                <a href="mailto:ofinfor@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+3496 150 15 00">96 150 15 00</a>
+                                <a class="mail" href="mailto:ofinfor@ajuntamentaldaia.org"
                                     >ofinfor@ajuntamentaldaia.org</a
                                 >
                             </div>
                             <div class="grop">
                                 <h3>Centre de les Dones Amparo Navarro</h3>
-                                <p>
+                                <p class="map">
                                     Casa de la Dona: Plaza Constitución 14 Bajo
                                 </p>
-                                <a href="tel:+34637 82 08 77">637 82 08 77</a>
-                                <a href="mailto:infancia@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34637 82 08 77">637 82 08 77</a>
+                                <a class="mail" href="mailto:infancia@ajuntamentaldaia.org"
                                     >infancia@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -170,7 +238,7 @@
                                     OMIC - Oficina Municipal d'Informació al
                                     Consumidor
                                 </h3>
-                                <p>
+                                <p class="map">
                                     Plaza de la Constitución, 14 46960 Aldaia
                                     Valencia
                                 </p>
@@ -179,39 +247,35 @@
                                     Carnet de manipulador d'aliments, Cens
                                     d'animals de companyia.
                                 </p>
-                                <a href="tel:+34663301225">663301225</a>
-                                <a href="mailto:omic@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34663301225">663301225</a>
+                                <a class="mail" href="mailto:omic@ajuntamentaldaia.org"
                                     >omic@ajuntamentaldaia.org</a
                                 >
                             </div>
                             <div class="grop">
                                 <h3>Protecció i Seguretat Ciutadana</h3>
-                                <p class="dir">
+                                <p class="map">
                                     Plaza de la Constitución, 23 Aldaia Valencia
                                 </p>
                                 <p class="nota">
-                                    Edifici Municipal - Servei 24 hores
-                                </p>
-                                <p class="nota">
+                                    Edifici Municipal - Servei 24 hores <br>
                                     Prefectura i Oficines de Policia Local
                                 </p>
-                                <a href="tel:+3496 151 00 61">96 151 00 61</a>
-                                <a href="tel:092"
+                                <a class="telephon" href="tel:+3496 151 00 61">96 151 00 61</a>
+                                <a class="telephon" href="tel:092"
                                     >092 (per a trucades des d'Aldaia)</a
                                 >
-                                <a href="tel:+3496198 50 13">96198 50 13</a>
+                                <a class="telephon" href="tel:+3496198 50 13">96198 50 13</a>
                             </div>
                             <div class="grop">
                                 <h3>Recollida d'estris</h3>
                                 <p class="nota">
                                     Es pot deixar tot el que hi ha en una casa,
-                                    però no buidar una sencera.
-                                </p>
-                                <p class="nota">
+                                    però no buidar una sencera.<br />
                                     S'exclouen enderrocs, amiant, extintors,
                                     etc...
                                 </p>
-                                <a href="tel:+3496 150 15 00">96 150 15 00</a>
+                                <a class="telephon" href="tel:+3496 150 15 00">96 150 15 00</a>
                             </div>
                         </div>
                     </div>
@@ -241,8 +305,8 @@
                         <div class="panel-body">
                             <div class="grop">
                                 <h3>Festes, falles i col·lectius</h3>
-                                <a href="tel:+34663304768">663304768</a>
-                                <a href="mailto:festes@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34663304768">663304768</a>
+                                <a class="mail" href="mailto:festes@ajuntamentaldaia.org"
                                     >festes@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -278,19 +342,17 @@
                                     C/ Sant Frances, 6 46960 Aldaia Valencia
                                 </p>
                                 <p class="nota">
-                                    Serveis: Gestió de tributs i recaptació
-                                </p>
-                                <p class="nota">
+                                    Serveis: Gestió de tributs i recaptació<br />
                                     Atenció contribuent, recaptació, cita prèvia
                                     960455082
                                 </p>
-                                <a href="tel:+3496 198 88 18">96 198 88 18 </a>
+                                <a class="telephon" href="tel:+3496 198 88 18">96 198 88 18 </a>
                                 <a
-                                    href="mailto:agenciatributaria@ajuntamentaldaia.org"
+                                    class="mail" href="mailto:agenciatributaria@ajuntamentaldaia.org"
                                     >agenciatributaria@ajuntamentaldaia.org</a
                                 >
                                 <a
-                                    href="mailto:informacionaldaia@atenciontributaria.es"
+                                    class="mail" href="mailto:informacionaldaia@atenciontributaria.es"
                                     >informacionaldaia@atenciontributaria.es</a
                                 >
                             </div>
@@ -333,20 +395,14 @@
                                     Ctra. Coscollar, s/n 46960 Aldaia Valencia
                                 </p>
                                 <p class="nota">
-                                    Servei municipal gratüit de autobusos:
-                                </p>
-                                <p class="nota">
-                                    Tots els diumenges i festius pels matins.
-                                </p>
-                                <p class="nota">
-                                    Eixida: des del carrer Pablo Iglesias a les
-                                    11:00 i a les 12:00 hores.
-                                </p>
-                                <p class="nota">
+                                    Servei municipal gratüit de autobusos: <br />
+                                    Tots els diumenges i festius pels matins. <br />
+                                    Eixida: des del carrer Pablo Iglesias a les <br />
+                                    11:00 i a les 12:00 hores. <br />
                                     Tornada: des del Cementeri a les 12:30
                                     hores.
                                 </p>
-                                <a href="tel:+34962111785">962111785</a>
+                                <a class="telephon" href="tel:+34962111785">962111785</a>
                             </div>
                             <div class="grop">
                                 <h3>Cementeri Vell</h3>
@@ -387,11 +443,11 @@
                                     C/ Rector Joaquín Sorolla s/n 46960 Aldaia
                                     Valencia
                                 </p>
-                                <a href="tel:+3496 198 80 21">96 198 80 21</a>
-                                <a href="mailto:maldaia@hotmail.com"
+                                <a class="telephon" href="tel:+3496 198 80 21">96 198 80 21</a>
+                                <a class="mail" href="mailto:maldaia@hotmail.com"
                                     >maldaia@hotmail.com</a
                                 >
-                                <a href="http://www.mercadoaldaia.com"
+                                <a class="link" href="http://www.mercadoaldaia.com"
                                     >www.mercadoaldaia.com</a
                                 >
                             </div>
@@ -406,8 +462,8 @@
                                     Ocupació via publica comercial. Horaris
                                     comercials.
                                 </p>
-                                <a href="tel:+3496 198 88 15">96 198 88 15</a>
-                                <a href="mailto:adl@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+3496 198 88 15">96 198 88 15</a>
+                                <a class="mail" href="mailto:adl@ajuntamentaldaia.org"
                                     >adl@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -445,10 +501,10 @@
                                     TAMA Av. de la Música, 11 46960 Aldaia
                                     Valencia
                                 </p>
-                                <a href="tel:+34961988406"
+                                <a class="telephon" href="tel:+34961988406"
                                     >961988406 ext. 4329</a
                                 >
-                                <a href="mailto:fmartinez@ajuntamentaldaia.org"
+                                <a class="mail" href="mailto:fmartinez@ajuntamentaldaia.org"
                                     >fmartinez@ajuntamentaldaia.org</a
                                 >
                                 <a
@@ -466,17 +522,17 @@
                                     Serveis: Estudis musicals, bandístics i de
                                     dansa.
                                 </p>
-                                <a href="tel:+3496 151 57 92">96 151 57 92</a>
+                                <a class="telephon" href="tel:+3496 151 57 92">96 151 57 92</a>
                             </div>
                             <div class="grop">
                                 <h3>
                                     EMDA - Escola Municipal de Dança d'Aldaia
                                 </h3>
-                                <a href="tel:+3496 151 57 92">96 151 57 92</a>
-                                <a href="mailto:cultura@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+3496 151 57 92">96 151 57 92</a>
+                                <a class="mail" href="mailto:cultura@ajuntamentaldaia.org"
                                     >cultura@ajuntamentaldaia.org</a
                                 >
-                                <a href="mailto:agarcera@ajuntamentaldaia.org"
+                                <a class="mail" href="mailto:agarcera@ajuntamentaldaia.org"
                                     >agarcera@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -488,11 +544,11 @@
                                     TAMA Avenida de la Música, 11 46960 Aldaia
                                     Valencia
                                 </p>
-                                <a href="tel:+34961500702">961500702</a>
-                                <a href="mailto:cultura@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34961500702">961500702</a>
+                                <a class="mail" href="mailto:cultura@ajuntamentaldaia.org"
                                     >cultura@ajuntamentaldaia.org</a
                                 >
-                                <a href="mailto:agarcera@ajuntamentaldaia.org"
+                                <a class="mail" href="mailto:agarcera@ajuntamentaldaia.org"
                                     >agarcera@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -502,14 +558,14 @@
                                     TAMA Av. de la Música, 11. Accés per carrer
                                     Quart, s/n 46960 Aldaia Valencia
                                 </p>
-                                <a href="tel:+34961500702">961500702</a>
-                                <a href="mailto:flopez@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34961500702">961500702</a>
+                                <a class="mail" href="mailto:flopez@ajuntamentaldaia.org"
                                     >flopez@ajuntamentaldaia.org</a
                                 >
-                                <a href="mailto:agarcera@ajuntamentaldaia.org"
+                                <a class="mail" href="mailto:agarcera@ajuntamentaldaia.org"
                                     >agarcera@ajuntamentaldaia.org</a
                                 >
-                                <a href="mailto:cultura@ajuntamentaldaia.org"
+                                <a class="mail" href="mailto:cultura@ajuntamentaldaia.org"
                                     >cultura@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -518,15 +574,15 @@
                                 <p class="map">
                                     C/ Esglesia, 2 46960 Aldaia Valencia
                                 </p>
-                                <a href="tel:+34961116948">961116948</a>
-                                <a href="mailto:fmartinez@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34961116948">961116948</a>
+                                <a class="mail" href="mailto:fmartinez@ajuntamentaldaia.org"
                                     >fmartinez@ajuntamentaldaia.org</a
                                 >
                                 <a
-                                    href="mailto:museudelpalmito@ajuntamentaldaia.org"
+                                    class="mail" href="mailto:museudelpalmito@ajuntamentaldaia.org"
                                     >museudelpalmito@ajuntamentaldaia.org</a
                                 >
-                                <a href="http://www.aldaia.es/mupa"
+                                <a class="link" href="http://www.aldaia.es/mupa"
                                     >www.aldaia.es/mupa</a
                                 >
                             </div>
@@ -536,8 +592,8 @@
                                     Serveis: Gestió de festes locals, de barri,
                                     falles, etc.
                                 </p>
-                                <a href="tel:+34663 30 47 68">663 30 47 68</a>
-                                <a href="mailto:festes@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34663 30 47 68">663 30 47 68</a>
+                                <a class="mail" href="mailto:festes@ajuntamentaldaia.org"
                                     >festes@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -550,14 +606,14 @@
                                 <p class="nota">
                                     Serveis: Gestió de la Cultura
                                 </p>
-                                <a href="tel:+3496 198 84 06">96 198 84 06</a>
-                                <a href="mailto:flopez@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+3496 198 84 06">96 198 84 06</a>
+                                <a class="mail" href="mailto:flopez@ajuntamentaldaia.org"
                                     >flopez@ajuntamentaldaia.org</a
                                 >
-                                <a href="mailto:agarcera@ajuntamentaldaia.org"
+                                <a class="mail" href="mailto:agarcera@ajuntamentaldaia.org"
                                     >agarcera@ajuntamentaldaia.org</a
                                 >
-                                <a href="mailto:cultura@ajuntamentaldaia.org"
+                                <a class="mail" href="mailto:cultura@ajuntamentaldaia.org"
                                     >cultura@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -591,9 +647,9 @@
                                 <h3>
                                     Aldaia Pròxima (Empresa Pública Municipal)
                                 </h3>
-                                <a href="tel:+34961985270">961985270</a>
+                                <a class="telephon" href="tel:+34961985270">961985270</a>
                                 <a
-                                    href="mailto:aldaiaproxima@ajuntamentaldaia.org"
+                                    class="mail" href="mailto:aldaiaproxima@ajuntamentaldaia.org"
                                     >aldaiaproxima@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -604,21 +660,18 @@
                                 </p>
                                 <p class="nota">
                                     Piscina climatitzada de 25 m.
-                                </p>
-                                <p class="nota">
-                                    Piscina climatitzada de 16,5 m.
-                                </p>
-                                <p class="nota">Balneari urbà.</p>
-                                <p class="nota">2 Sales multiusos.</p>
-                                <p class="nota">1 Sala amb tapis.</p>
-                                <a href="tel:+34961985270">961985270</a>
+                                    <br />Piscina climatitzada de 16,5 m.
+                                    <br />Balneari urbà.
+                                    <br />2 Sales multiusos.
+                                    <br />1 Sala amb tapis.</p>
+                                <a class="telephon" href="tel:+34961985270">961985270</a>
                             </div>
                             <div class="grop">
                                 <h3>Pavelló Poliesportiu</h3>
                                 <p class="map">
                                     Juaquín Blume, s/n 46960 Aldaia Valencia
                                 </p>
-                                <a href="tel:+34961500702">961500702</a>
+                                <a class="telephon" href="tel:+34961500702">961500702</a>
                             </div>
                         </div>
                     </div>
@@ -659,9 +712,9 @@
                                     Bàsica. Activitats en centres escolars.
                                     Escola d'Estiu.
                                 </p>
-                                <a href="tel:+3496 198 88 12">96 198 88 12</a>
-                                <a href="tel:+3496 151 76 41">96 151 76 41</a>
-                                <a href="mailto:educacio@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+3496 198 88 12">96 198 88 12</a>
+                                <a class="telephon" href="tel:+3496 151 76 41">96 151 76 41</a>
+                                <a class="mail" href="mailto:educacio@ajuntamentaldaia.org"
                                     >educacio@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -670,7 +723,7 @@
                                 <p class="map">
                                     C/ Sant Frances, 50 Aldaia Valencia
                                 </p>
-                                <a href="tel:+3496 120 66 05">96 120 66 05</a>
+                                <a class="telephon" href="tel:+3496 120 66 05">96 120 66 05</a>
                             </div>
                         </div>
                     </div>
@@ -700,7 +753,7 @@
                         <div class="panel-body">
                             <div class="grop">
                                 <h3>Bústia ciutadana</h3>
-                                <a href="https://www.aldaia.eu/contact"
+                                <a class="link" href="https://www.aldaia.eu/contact"
                                     >Contact</a
                                 >
                             </div>
@@ -708,7 +761,7 @@
                                 <h3>
                                     JUNTS DECIDIM (Enquestes participatives)
                                 </h3>
-                                <a href="https://participacio.aldaia.eu/"
+                                <a class="link" href="https://participacio.aldaia.eu/"
                                     >Participacio</a
                                 >
                             </div>
@@ -797,14 +850,14 @@
                                 <p class="map">
                                     c/ Maestro Serrano 42 46960 Aldaia
                                 </p>
-                                <a href="tel:+34961988796">961988796</a>
+                                <a class="telephon" href="tel:+34961988796">961988796</a>
                             </div>
                             <div class="grop">
                                 <h3>Gent Jove</h3>
                                 <p class="map">
                                     Plaza Constitución 1 46960 Aldaia Valencia
                                 </p>
-                                <a href="tel:+34607 950 458">607 950 458</a>
+                                <a class="telephon" href="tel:+34607 950 458">607 950 458</a>
                             </div>
                         </div>
                     </div>
@@ -842,7 +895,7 @@
                                     memòria, manualitats, ioga i taxi, teatre,
                                     etc.
                                 </p>
-                                <a href="tel:+34961508770">961508770</a>
+                                <a class="telephon" href="tel:+34961508770">961508770</a>
                             </div>
                             <div class="grop">
                                 <h3>
@@ -852,7 +905,7 @@
                                 <p class="map">
                                     C/ Maestro Serrano, 42 46960 Aldaia Valencia
                                 </p>
-                                <a href="tel:+3496 198 87 96">96 198 87 96</a>
+                                <a class="telephon" href="tel:+3496 198 87 96">96 198 87 96</a>
                             </div>
                             <div class="grop">
                                 <h3>Club d'Oci</h3>
@@ -864,7 +917,7 @@
                                     d'informàtica, cant, memòria, manualitats,
                                     ioga i taxi, teatre, etc
                                 </p>
-                                <a href="tel:+3496 198 87 69">96 198 87 69</a>
+                                <a class="telephon" href="tel:+3496 198 87 69">96 198 87 69</a>
                             </div>
                             <div class="grop">
                                 <h3>
@@ -879,7 +932,7 @@
                                     d'activitats, programes i gestió de centres
                                     de persones majors.
                                 </p>
-                                <a href="tel:+3496 198 87 96">96 198 87 96</a>
+                                <a class="telephon" href="tel:+3496 198 87 96">96 198 87 96</a>
                             </div>
                         </div>
                     </div>
@@ -920,12 +973,12 @@
                                     entrevistes, Formació, Assessorament a
                                     emprenedors, Assessorament empresarial, etc.
                                 </p>
-                                <a href="tel:+34607998065">607998065</a>
-                                <a href="tel:+34961988815">961988815</a>
-                                <a href="mailto:adl@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34607998065">607998065</a>
+                                <a class="telephon" href="tel:+34961988815">961988815</a>
+                                <a class="mail" href="mailto:adl@ajuntamentaldaia.org"
                                     >adl@ajuntamentaldaia.org</a
                                 >
-                                <a href="https://aldaia.eu/recursos-humans/"
+                                <a class="link" href="https://aldaia.eu/recursos-humans/"
                                     >Recursos Humans</a
                                 >
                             </div>
@@ -957,7 +1010,7 @@
                         <div class="panel-body">
                             <div class="grop">
                                 <h3>Bústia ciutadana</h3>
-                                <a href="https://aldaia.eu/contact/">Contact</a>
+                                <a class="link" href="https://aldaia.eu/contact/">Contact</a>
                             </div>
                         </div>
                     </div>
@@ -989,9 +1042,9 @@
                                 <h3>
                                     Personal, Organització i Recursos Humans
                                 </h3>
-                                <a href="tel:+34663301332">663301332</a>
-                                <a href="tel:+34663301171">663301171</a>
-                                <a href="mailto:personal@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34663301332">663301332</a>
+                                <a class="telephon" href="tel:+34663301171">663301171</a>
+                                <a class="mail" href="mailto:personal@ajuntamentaldaia.org"
                                     >personal@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -1026,8 +1079,8 @@
                                 <p class="nota">
                                     Serveis: Fe pública, Registre d'interessos
                                 </p>
-                                <a href="tel:+34663304854">663304854</a>
-                                <a href="mailto:secretaria@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34663304854">663304854</a>
+                                <a class="mail" href="mailto:secretaria@ajuntamentaldaia.org"
                                     >secretaria@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -1066,34 +1119,34 @@
                                     Serveis de manteniment i conservació de
                                     l'espai públic
                                 </p>
-                                <a href="tel:+34961988817">961988817</a>
-                                <a href="tel:+34961988819">961988819</a>
+                                <a class="telephon" href="tel:+34961988817">961988817</a>
+                                <a class="telephon" href="tel:+34961988819">961988819</a>
                             </div>
                             <div class="grop">
                                 <h3>
                                     Contractació, Resp. Patrimonial i Règim
                                     Jurídic
                                 </h3>
-                                <a href="tel:+34663304861">663304861</a>
-                                <a href="tel:+34663304868">663304868</a>
+                                <a class="telephon" href="tel:+34663304861">663304861</a>
+                                <a class="telephon" href="tel:+34663304868">663304868</a>
                                 <a
-                                    href="mailto:contratacion@ajuntamentaldaia.org"
+                                    class="mail" href="mailto:contratacion@ajuntamentaldaia.org"
                                     >contratacion@ajuntamentaldaia.org</a
                                 >
                             </div>
                             <div class="grop">
                                 <h3>Estadística i Cementeri</h3>
-                                <a href="tel:+34663301210">663301210</a>
+                                <a class="telephon" href="tel:+34663301210">663301210</a>
                                 <a
-                                    href="mailto:estadistica@ajuntamentaldaia.org"
+                                    class="mail" href="mailto:estadistica@ajuntamentaldaia.org"
                                     >estadistica@ajuntamentaldaia.org</a
                                 >
                             </div>
                             <div class="grop">
                                 <h3>Informàtica</h3>
-                                <a href="tel:+34663604922">663604922</a>
+                                <a class="telephon" href="tel:+34663604922">663604922</a>
                                 <a
-                                    href="mailto:informatica@ajuntamentaldaia.org"
+                                    class="mail" href="mailto:informatica@ajuntamentaldaia.org"
                                     >informatica@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -1110,12 +1163,12 @@
                                     entrevistes, Formació, Assessorament a
                                     emprenedors, Assessorament empresarial, etc.
                                 </p>
-                                <a href="tel:+34961988815">961988815</a>
-                                <a href="tel:+34607998065">607998065</a>
-                                <a href="mailto:adl@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34961988815">961988815</a>
+                                <a class="telephon" href="tel:+34607998065">607998065</a>
+                                <a class="mail" href="mailto:adl@ajuntamentaldaia.org"
                                     >adl@ajuntamentaldaia.org</a
                                 >
-                                <a href="https://aldaia.eu/recursos-humans/"
+                                <a class="link" href="https://aldaia.eu/recursos-humans/"
                                     >Recursos humans</a
                                 >
                             </div>
@@ -1151,8 +1204,8 @@
                                     Plaza Constitución 14 Bajo 46960 Aldaia
                                     Valencia
                                 </p>
-                                <a href="tel:+34637 82 08 77">637 82 08 77</a>
-                                <a href="mailto:infancia@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34637 82 08 77">637 82 08 77</a>
+                                <a class="mail" href="mailto:infancia@ajuntamentaldaia.org"
                                     >infancia@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -1167,23 +1220,23 @@
                                     Diversitat Funcional, accessibilitat,
                                     Drogodependències i Ajudes Socials, etc.
                                 </p>
-                                <a href="tel:+34961988811">961988811</a>
+                                <a class="telephon" href="tel:+34961988811">961988811</a>
                             </div>
                             <div class="grop">
                                 <h3>Centre Matilde Salvador</h3>
                                 <p class="map">
                                     c/ Maestro Serrano 42 46960 Aldaia
                                 </p>
-                                <a href="tel:+34961988796">961988796</a>
+                                <a class="telephon" href="tel:+34961988796">961988796</a>
                             </div>
                             <div class="grop">
                                 <h3>Centre Social del Barri del Crist</h3>
                                 <p class="map">
                                     C/ Santíssim Crist, 66 Aldaia Valencia
                                 </p>
-                                <a href="tel:+3496 150 15 82">96 150 15 82</a>
+                                <a class="telephon" href="tel:+3496 150 15 82">96 150 15 82</a>
                                 <a
-                                    href="mailto:serviciossociales@barriodelcristo.es"
+                                    class="mail" href="mailto:serviciossociales@barriodelcristo.es"
                                     >serviciossociales@barriodelcristo.es</a
                                 >
                             </div>
@@ -1193,8 +1246,8 @@
                                     Avda. Miguel Hernández, 40 b. 46960 Aldaia
                                     Valencia
                                 </p>
-                                <a href="tel:+34961988812">961988812</a>
-                                <a href="mailto:educacio@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34961988812">961988812</a>
+                                <a class="mail" href="mailto:educacio@ajuntamentaldaia.org"
                                     >educacio@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -1207,7 +1260,7 @@
                                     C/ Coladors, 16 Aldaia Valencia
                                 </p>
                                 <p class="nota">Centre Social Coladors</p>
-                                <a href="tel:+3496 198 88 11">96 198 88 11</a>
+                                <a class="telephon" href="tel:+3496 198 88 11">96 198 88 11</a>
                             </div>
                         </div>
                     </div>
@@ -1240,7 +1293,7 @@
                                 <p class="map">
                                     Carrer Major, 90 46960 Aldaia Valencia
                                 </p>
-                                <a href="tel:+3496 150 09 91">96 150 09 91</a>
+                                <a class="telephon" href="tel:+3496 150 09 91">96 150 09 91</a>
                             </div>
                             <div class="grop">
                                 <h3>Ecoparc</h3>
@@ -1248,17 +1301,17 @@
                                     Carrer Aladrers, s/n. Poligono Bovalar 46970
                                     Alaquàs Valencia
                                 </p>
-                                <a href="tel:+3496 353 37 90">96 353 37 90</a>
-                                <a href="http://emtre.es/">emtre</a>
+                                <a class="telephon" href="tel:+3496 353 37 90">96 353 37 90</a>
+                                <a class="link" href="http://emtre.es/">emtre</a>
                             </div>
                             <div class="grop">
                                 <h3>Emergències</h3>
-                                <a href="tel:112">112</a>
+                                <a class="telephon" href="tel:112">112</a>
                             </div>
                             <div class="grop">
                                 <h3>Guàrdia Civil</h3>
                                 <p class="map">C/ Manises s/n 46960 Aldaia</p>
-                                <a href="tel:+3496 150 10 02">96 150 10 02</a>
+                                <a class="telephon" href="tel:+3496 150 10 02">96 150 10 02</a>
                             </div>
                             <div class="grop">
                                 <h3>Hospital de Manises</h3>
@@ -1266,8 +1319,8 @@
                                     Avenida Generalitat Valenciana, 50 46940
                                     Manises Valencia
                                 </p>
-                                <a href="tel:+3496 184 50 00">96 184 50 00</a>
-                                <a href="http://www.hospitalmanises.es/"
+                                <a class="telephon" href="tel:+3496 184 50 00">96 184 50 00</a>
+                                <a class="link" href="http://www.hospitalmanises.es/"
                                     >Hospital de Manises</a
                                 >
                             </div>
@@ -1277,16 +1330,16 @@
                                     Carrer Dissabte, 9 baix 46960 Aldaia
                                     Valencia
                                 </p>
-                                <a href="tel:+3496 150 13 66">96 150 13 66</a>
+                                <a class="telephon" href="tel:+3496 150 13 66">96 150 13 66</a>
                             </div>
                             <div class="grop">
                                 <h3>Policia Local</h3>
-                                <a href="tel:+3496 151 00 61">96 151 00 61</a>
-                                <a href="tel:092">092</a>
+                                <a class="telephon" href="tel:+3496 151 00 61">96 151 00 61</a>
+                                <a class="telephon" href="tel:092">092</a>
                             </div>
                             <div class="grop">
                                 <h3>Policia Nacional</h3>
-                                <a href="tel:091">091</a>
+                                <a class="telephon" href="tel:091">091</a>
                             </div>
                         </div>
                     </div>
@@ -1316,9 +1369,9 @@
                         <div class="panel-body">
                             <div class="grop">
                                 <h3>Disciplina Urbanística</h3>
-                                <a href="tel:+34663301234">663301234</a>
-                                <a href="tel:+34663304927">663304927</a>
-                                <a href="mailto:disciplina@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34663301234">663301234</a>
+                                <a class="telephon" href="tel:+34663304927">663304927</a>
+                                <a class="mail" href="mailto:disciplina@ajuntamentaldaia.org"
                                     >disciplina@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -1328,9 +1381,9 @@
                                     Plaça de la Constitució, 10 46960 Aldaia
                                     Valencia
                                 </p>
-                                <a href="tel:+34961501500">961501500</a>
-                                <a href="tel:+34961510693">961510693</a>
-                                <a href="mailto:urbanisme@ajuntamentaldaia.org"
+                                <a class="telephon" href="tel:+34961501500">961501500</a>
+                                <a class="telephon" href="tel:+34961510693">961510693</a>
+                                <a class="mail" href="mailto:urbanisme@ajuntamentaldaia.org"
                                     >urbanisme@ajuntamentaldaia.org</a
                                 >
                             </div>
@@ -1372,7 +1425,7 @@
                                     (desnonaments, lloguers, etc), ajudes
                                     econòmiques, etc.
                                 </p>
-                                <a href="tel:+3496 198 87 96">96 198 87 96</a>
+                                <a class="telephon" href="tel:+3496 198 87 96">96 198 87 96</a>
                             </div>
                         </div>
                     </div>
@@ -1380,11 +1433,11 @@
             </div>
         </div>
 
-        <h4 class="panel-title">Enlaces</h4>
 
         <div class="field-items">
+            <h4 class="panel-title">Enlaces</h4>
             <div class="field-item even">
-                <a
+                <a class="link" 
                     href="http://www.barriodelcristo.es/"
                     target="_blank"
                     data-wahfont="16"
@@ -1392,7 +1445,7 @@
                 >
             </div>
             <div class="field-item odd">
-                <a
+                <a class="link" 
                     href="http://artesoficiosaldaia.es/"
                     target="_blank"
                     data-wahfont="16"
@@ -1400,7 +1453,7 @@
                 >
             </div>
             <div class="field-item even">
-                <a
+                <a class="link" 
                     href="http://www.bibliotecaspublicas.es/aldaia/index.jsp"
                     target="_blank"
                     data-wahfont="16"
@@ -1408,12 +1461,12 @@
                 >
             </div>
             <div class="field-item odd">
-                <a href="http://fernanbus.es/" target="_blank" data-wahfont="16"
+                <a class="link" href="http://fernanbus.es/" target="_blank" data-wahfont="16"
                     >Fernanbus</a
                 >
             </div>
             <div class="field-item even">
-                <a
+                <a class="link" 
                     href="http://www.renfe.com/viajeros/cercanias/valencia/index.html"
                     target="_blank"
                     data-wahfont="16"
@@ -1421,7 +1474,7 @@
                 >
             </div>
             <div class="field-item odd">
-                <a
+                <a class="link" 
                     href="http://www.san.gva.es/cita_previa/citaprevia_val.html"
                     target="_blank"
                     data-wahfont="16"
@@ -1429,7 +1482,7 @@
                 >
             </div>
             <div class="field-item even">
-                <a
+                <a class="link" 
                     href="http://www.hospitalmanises.es/"
                     target="_blank"
                     data-wahfont="16"
@@ -1437,7 +1490,7 @@
                 >
             </div>
             <div class="field-item odd">
-                <a
+                <a class="link" 
                     href="http://www.gva.es/va/inicio/presentacion"
                     target="_blank"
                     data-wahfont="16"
@@ -1445,12 +1498,12 @@
                 >
             </div>
             <div class="field-item even">
-                <a href="http://www.dival.es/" target="_blank" data-wahfont="16"
+                <a class="link" href="http://www.dival.es/" target="_blank" data-wahfont="16"
                     >Diputació de València</a
                 >
             </div>
             <div class="field-item odd">
-                <a
+                <a class="link" 
                     href="http://www.aigueshorta.es/ESP/Home.asp"
                     target="_blank"
                     data-wahfont="16"
@@ -1458,7 +1511,7 @@
                 >
             </div>
             <div class="field-item even">
-                <a
+                <a class="link" 
                     href="http://mancohortasud.es/"
                     target="_blank"
                     data-wahfont="16"
@@ -1466,7 +1519,7 @@
                 >
             </div>
             <div class="field-item odd">
-                <a
+                <a class="link" 
                     href="http://www.fhortasud.org/"
                     target="_blank"
                     data-wahfont="16"
@@ -1474,7 +1527,7 @@
                 >
             </div>
             <div class="field-item even">
-                <a
+                <a class="link" 
                     href="http://idecohortasud.org/"
                     target="_blank"
                     data-wahfont="16"
@@ -1482,7 +1535,7 @@
                 >
             </div>
             <div class="field-item odd">
-                <a
+                <a class="link" 
                     href="http://museuhortasud.com/"
                     target="_blank"
                     data-wahfont="16"
@@ -1490,7 +1543,7 @@
                 >
             </div>
             <div class="field-item even">
-                <a
+                <a class="link" 
                     href="http://xarxa-serveis.aldaia.es/"
                     target="_blank"
                     data-wahfont="16"
